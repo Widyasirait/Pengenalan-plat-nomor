@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gradient-to-br from-green-100 via-green-200 to-green-100 min-h-screen flex items-center justify-center">
 
@@ -29,15 +30,15 @@
             </div>
         @endif
 
-        <form action="{{ route('login') }}" method="POST" class="space-y-5">
+        <form action="{{ route('login.submit') }}" method="POST" class="space-y-5">
             @csrf
 
             <div class="relative">
-                <label for="username" class="text-sm font-semibold text-gray-700 mb-1 block">Nama Pengguna</label>
+                <label for="email" class="text-sm font-semibold text-gray-700 mb-1 block">Email</label>
                 <span class="absolute left-3 top-10 text-gray-400">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-envelope"></i>
                 </span>
-                <input type="text" name="username" id="username" required placeholder="Masukkan nama pengguna"
+                <input type="email" name="email" id="email" required placeholder="Masukkan email"
                        class="pl-10 w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 text-gray-700">
             </div>
 
@@ -53,12 +54,11 @@
                 </span>
             </div>
 
-            <div class="flex items-center justify-between">
+            <div class="flex items-center">
                 <label class="flex items-center text-sm text-gray-700">
-                    <input type="checkbox" class="h-4 w-4 text-green-500 border-gray-300 rounded mr-2">
+                    <input type="checkbox" name="remember" class="h-4 w-4 text-green-500 border-gray-300 rounded mr-2">
                     Ingat saya
                 </label>
-                <a href="#" class="text-sm text-green-500 hover:text-green-700">Lupa kata sandi?</a>
             </div>
 
             <button type="submit"
@@ -100,6 +100,5 @@
             });
         });
     </script>
-
 </body>
 </html>

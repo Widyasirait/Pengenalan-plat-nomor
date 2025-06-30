@@ -31,11 +31,21 @@
         <form action="{{ route('register') }}" method="POST" class="space-y-4">
             @csrf
             <div>
-                <label for="username" class="block mb-1 font-semibold text-gray-700">Nama Pengguna</label>
+                <label for="name" class="block mb-1 font-semibold text-gray-700">Nama</label>
                 <div class="relative">
                     <i class="fas fa-user absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                    <input type="text" name="username" id="username" required
-                        placeholder="Nama pengguna"
+                    <input type="text" name="name" id="name" required
+                        placeholder="Masukkan nama"
+                        class="pl-10 pr-4 py-3 w-full border rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-500">
+                </div>
+            </div>
+
+            <div>
+                <label for="email" class="block mb-1 font-semibold text-gray-700">Email</label>
+                <div class="relative">
+                    <i class="fas fa-envelope absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <input type="email" name="email" id="email" required
+                        placeholder="Masukkan email"
                         class="pl-10 pr-4 py-3 w-full border rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-500">
                 </div>
             </div>
